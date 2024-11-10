@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Registrar</title>
+</head>
+<body>
+  <div class="head">
+    <div class="logo">
+      <a href="/" target="_self"><img src="img/lgblanco.PNG" alt="Logo" width="250" height="200"></a>
+    </div>
+    <nav class="navbar">
+      <a href="/">Inicio</a>
+      <a href="/nosotros">Nosotros</a>
+      <a href="/registrar">Registrar</a>
+    </nav>
+  </div>
+  <div class="registro">
+    <form action="/regUsuario" method="post">
+      <h3>Registro de usuario</h3>
+      <div class="row">
+        <div class="col-25">
+            <label for="nombre">Nombre *</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="email">Correo electronico *</label>
+        </div>
+        <div class="col-75">
+          <input type="email" id="correo" name="correo" placeholder="lockera@email.com" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="genero">Genero *</label>
+        </div>
+        <div class="col-75">
+          <select id="genero" name="genero" required>
+            <option value="" disabled selected>Sexo</option>
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="direccion">Direccion *</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="direccion" name="direccion" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="ciudad">Ciudad</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="ciudad" name="ciudad">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="estado">Estado</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="estado" name="estado">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="Cp">Cp *</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="Cp" name="Cp" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="psw">Contraseña *</label>
+        </div>
+        <div class="col-75">
+          <input type="password" id="psw" name="psw" required>
+        </div>
+      </div>
+      <div>
+        <label for="submitvideo">Subir video</label>
+        <input type="file" id="submitvideo" name="submitvideo" accept=".mp4">
+      </div>
+      <div class="row">
+        <input type="submit" value="Guardar">
+      </div>
+    </form>
+  </div>
+      <footer class="footer">
+        All rights from Lock'era
+      </footer>
+</body>
+</html>

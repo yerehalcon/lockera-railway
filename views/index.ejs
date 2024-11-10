@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--This tag is use only to bring information about the page-->
+        <meta charset="UTF=8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lock'era</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="//cdn/s.cloudflare.com/ajax/11bs/font-awesome/5.15.1/css/all.min.css">
+        
+    </head>
+    <body>
+        <!--Everything else we want to add-->
+
+    <div class="head">  
+        <div class="logo">
+            <a href="/" target="_self"><img src="img/lgblanco.PNG" alt="Logo" width="250" height="200"></a>
+        </div>
+        
+        <nav class="navbar">
+            <a href="/">Inicio</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/registrar">Registrar</a>
+            <a href="upload.html">Video</a>
+        </nav>
+    </div>
+
+    <header class="content header">
+        <h1 class="title">Lock'era</h1>
+        <% if(typeof mensaje != "undefined"){ %>
+            <p><%= mensaje %></p>
+        <% } %>
+            <p>
+                Los mejores cerrojos para la mejor familia.
+            </p>
+
+            <div class="btn-home">
+                <a href="/registrar" class="btn">Haz click para registrar</a>
+                <!--<a href="#" class="btn">Soy anfitrion</a>--> 
+            </div>
+    </header>
+
+        <section class="content sau">
+                <h2 class="title">Reviews</h2>
+                <p>Muchas personas han probado nuestro servicio y ahora forman parte de una comunidad que se
+                    siente segura y satisfecha. Gracias a nuestras soluciones tecnológicas avanzadas, hemos logrado 
+                    transformar la experiencia de nuestros usuarios, brindándoles tranquilidad y eficacia en sus actividades diarias.</p>
+
+                <div class="box-container">
+
+                    <div class="box">
+                        <i class="fab fa-angular"></i>
+                        <h3>Fatima</h3>
+                        <br>
+                        <p>"Desde que instalé el cerrojo de reconocimiento facial, siento que mi hogar está mucho más seguro. La tecnología es increíblemente precisa y nunca más tuve que preocuparme por perder las llaves. Sin duda, la mejor inversión en seguridad que he hecho."</p>
+                    </div>
+
+                    <div class="box">
+                        <i class="fab fa-facebook"></i>
+                        <h3>Mariana</h3>
+                        <br>
+                        <p>"Lo que más me gusta es la comodidad: simplemente miro el cerrojo y se abre automáticamente. Ideal para cuando tengo las manos ocupadas. ¡La seguridad del futuro ya está aquí!"</p>
+                    </div>
+
+                    <div class="box">
+                        <i class="fab fa-android"></i>
+                        <h3>Andres</h3>
+                        <br>
+                        <p>"Estaba un poco escéptico al principio, pero este cerrojo de reconocimiento facial ha superado todas mis expectativas. Es muy intuitivo y me da una paz mental enorme saber que solo las personas autorizadas pueden entrar a mi casa."</p>
+                            
+                    </div>
+
+                </div>
+
+        </section>
+
+        <section class="content about">
+            <h2 class="title">Nosotros</h2>
+            <p>Nosotros somos una empresa dedicada a la seguridad, Lock'era busca encontrar un punto de seguridad
+                y conformidad entre nuestres clientes y usuarios, tenemos planeado antes de finales de año posicionarnos
+                entre las top empresas de cerrojos inteligentes mas pedidas a nivel nacional.
+            </p>
+            <br>
+            <a href="/nosotros" class="btn">Saber mas</a> 
+        </section>
+
+
+        <section class="contect contact">
+            <h2 class="title">Contacto</h2>
+            <p class="texto">333243443</p>
+            <p class="texto">Locacion: Entre calle Olimpica y Boulevard en frente de UTEG OLIMPICA y al lado de CUCEI.</p>
+            <a href="mailto:5320160359@alumnos.uteg.edu.mx" target="_self">Contactanos</a>
+            <br>
+            <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.4173556990754!2d-103.32863792557606!3d20.652592700593882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b23af5e4996d%3A0x5098874653d159f3!2sUTEG%20Plantel%20Ol%C3%ADmpica!5e0!3m2!1spt-BR!2smx!4v1727063438698!5m2!1spt-BR!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+        </section>
+
+        <footer class="footer">
+            All rights from Lock'era
+        </footer>
+
+    </body>
+
+</html>
