@@ -12,12 +12,20 @@ const apikeys = require('./cred.json');
 
 // Configuraciones 
 app.set('view engine', 'ejs'); 
-// Configura EJS como el motor de plantillas 
 app.set('views', path.join(__dirname, 'views')); 
-// Configura la carpeta de vistas
+
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false })); 
 app.use(require('./routes/regUsuario'));
+app.use(require('./routes/codlogin'));
+app.use(require('./routes/registrar'));
+
+app.use(session({
+  secret: 'mi_secreto', 
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: true } 
+}));
 
 // Configuración de multer para el manejo de archivos
 const storage = multer.diskStorage({
@@ -42,11 +50,14 @@ app.get('/', (req, res) => {
 app.get('/nosotros', (req, res) => { 
     res.render('nosotros'); 
 });
-// Ruta para nosotros 
+// Ruta para registrar 
 app.get('/registrar', (req, res) => { 
     res.render('registrar'); 
 });
-
+// Ruta para login
+app.get('/login', (req, res) => {
+  res.render('login');
+});
 // Configuración de Google OAuth
 const CLIENT_ID = '969040758536-0jalhru9efoto2mtq8sesluqkj9k5ce7.apps.googleusercontent.com';
 const CLIENT_SECRET = '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';

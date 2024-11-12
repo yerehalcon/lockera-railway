@@ -20,7 +20,10 @@
         <nav class="navbar">
             <a href="/">Inicio</a>
             <a href="/nosotros">Nosotros</a>
-            <a href="/registrar">Registrar</a>
+            <a href="/login">Iniciar sesión</a>
+            <% if(typeof msg2 != "undefined"){ %>
+                <a href="/upload.html"><%= msg2 %></a>
+            <% } %>
         </nav>
     </div>
 

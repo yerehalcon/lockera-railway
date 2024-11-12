@@ -3,7 +3,7 @@ const { body, validationResult } = require('express-validator');
 const router = express.Router();
 const conexion = require("../config/conexion");
 const link = require("../config/link");
-//const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 router.post('/regUsuario', async (req, res) => {
@@ -17,16 +17,17 @@ router.post('/regUsuario', async (req, res) => {
     let psw = req.body.psw;
     
     try {
-        //const hashedPsw = await bcrypt.hash(psw, saltRounds);
+        const hashedPsw = await bcrypt.hash(psw, saltRounds);
         const insertar = "INSERT INTO user_data (nombre, correo, genero, direccion, ciudad, estado, cp, password) VALUES (?,?,?,?,?,?,?,?)";
-        conexion.query(insertar, [nom, cor, sex, dir, ciu, est, cod, psw], function (error) {
+        conexion.query(insertar, [nom, cor, sex, dir, ciu, est, cod, hashedPsw], function (error) {
             if (error) {
                 console.log("Error al intentar registrar usuario");
                 return res.status(500).send("Error al realizar el registro");
             } else {
                 console.log("Registro exitoso");
                 let mensaje = "Usuario registrado exitosamente";
-                res.render("index", {mensaje,link});
+                let msg2 = "Carga video";
+                res.render("index", {mensaje, msg2 ,link});
             }
         });
     } catch (error) {
