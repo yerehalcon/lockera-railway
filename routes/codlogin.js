@@ -43,7 +43,10 @@ router.post("/codlogin", function(req, res) {
                 req.session.c = user.cp;
 
                 console.log(req.session);
-                res.render('index', { datos: req.session, link });
+                mensaje = "Sesión iniciada exitosamente";
+                let msg2 = "Carga video";
+                res.render('index', { datos: req.session, link , mensaje, msg2});
+            
             }
         }
     });

@@ -8,7 +8,7 @@ const saltRounds = 10;
 conexion = require("./config/conexion");
 const multer = require('multer');
 const apikeys = require('./cred.json');
-//bcrypt = require("bcrypt");
+bcrypt = require("bcrypt");
 
 // Configuraciones 
 app.set('view engine', 'ejs'); 
@@ -16,9 +16,6 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false })); 
-app.use(require('./routes/regUsuario'));
-app.use(require('./routes/codlogin'));
-app.use(require('./routes/registrar'));
 
 app.use(session({
   secret: 'mi_secreto', 
@@ -27,8 +24,14 @@ app.use(session({
   cookie: { secure: true } 
 }));
 
+app.use(require('./routes/regUsuario'));
+app.use(require('./routes/codlogin'));
+app.use(require('./routes/registrar'));
+
+
+
 // Configuración de multer para el manejo de archivos
-const storage = multer.diskStorage({
+/*const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'uploads'); // Carpeta temporal donde se guardan los archivos
   },
@@ -36,7 +39,7 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   }
 });
-const upload = multer({ storage });
+const upload = multer({ storage });*/
 
 // Rutas Estáticas 
 app.use(express.static(path.join(__dirname, 'public'))); 
@@ -58,8 +61,17 @@ app.get('/registrar', (req, res) => {
 app.get('/login', (req, res) => {
   res.render('login');
 });
+
+
+app.get('/', function(req, res) {
+  const userLoggedIn = req.session.login ? true : false; // Suponiendo que tienes la sesión de usuario configurada
+  const msg2 = "Mensaje de ejemplo"; // Reemplaza esto con tu lógica real para msg2
+  res.render('index', { userLoggedIn, msg2 });
+});
+
+
 // Configuración de Google OAuth
-const CLIENT_ID = '969040758536-0jalhru9efoto2mtq8sesluqkj9k5ce7.apps.googleusercontent.com';
+/*const CLIENT_ID = '969040758536-0jalhru9efoto2mtq8sesluqkj9k5ce7.apps.googleusercontent.com';
 const CLIENT_SECRET = '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';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
 const REFRESH_TOKEN = '1//04biZIksVIYqsCgYIARAAGAQSNwF-L9IrqGyMWkeblXEWMcbDfRnQ8s93kdNetNHs94uygSUdtPjMZPtw0CbNNqzk40aI-af1BKk';
@@ -77,12 +89,12 @@ const drive = google.drive({
   version: 'v3',
   auth: oauth2Client
 });
-
+*/
 // Ruta para la página de carga de archivos
 app.get('/upload', (req, res) => {
   res.render('upload'); // Asegúrate de tener una vista 'upload.ejs' para el formulario de carga
 });
-
+/*
 // Ruta para manejar la carga de archivos
 app.post('/upload', upload.single('video'), async (req, res) => {
   const filePath = req.file.path;
@@ -119,7 +131,7 @@ async function uploadFile(filePath, fileName) {
 
   return response.data;
 }
-
+*/
 // Configurar puerto del servidor 
 const PORT = process.env.PORT || 3000; 
 app.listen(PORT, function () { console.log(`Servidor en marcha en http://localhost:${PORT}`); 

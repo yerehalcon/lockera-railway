@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <!--This tag is use only to bring information about the page-->
         <meta charset="UTF=8">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
         <link rel="icon" href="../public/img/icolooock.PNG">
     </head>
     <body>
-        <!--Everything else we want to add-->
 
     <div class="head">  
         <div class="logo">
@@ -21,9 +19,7 @@
             <a href="/">Inicio</a>
             <a href="/nosotros">Nosotros</a>
             <a href="/login">Iniciar sesión</a>
-            <% if(typeof msg2 != "undefined"){ %>
-                <a href="/upload.html"><%= msg2 %></a>
-            <% } %>
+            <% if(typeof msg2 != "undefined"){ %><a href="/upload"><%= msg2 %></a><% } %>
         </nav>
     </div>
 
@@ -90,8 +86,9 @@
         <section class="contect contact">
             <h2 class="title">Contacto</h2>
             <p class="texto">333243443</p>
+            <p class="texto">3861047067</p>
             <p class="texto">Locacion: Entre calle Olimpica y Boulevard en frente de UTEG OLIMPICA y al lado de CUCEI.</p>
-            <a href="mailto:5320160359@alumnos.uteg.edu.mx" target="_self">Contactanos</a>
+            
             <br>
             <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.4173556990754!2d-103.32863792557606!3d20.652592700593882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b23af5e4996d%3A0x5098874653d159f3!2sUTEG%20Plantel%20Ol%C3%ADmpica!5e0!3m2!1spt-BR!2smx!4v1727063438698!5m2!1spt-BR!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         
@@ -100,7 +97,5 @@
         <footer class="footer">
             All rights from Lock'era
         </footer>
-
     </body>
-
 </html>
