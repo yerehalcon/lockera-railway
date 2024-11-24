@@ -23,7 +23,7 @@ router.post('/regUsuario', async (req, res) => {
             if (error) {
                 console.log("Error al intentar registrar usuario");
                 return res.status(500).send("Error al realizar el registro");
-            } else {
+            } else { 
                 console.log("Registro exitoso");
                 let mensaje = "Usuario registrado exitosamente";
                 let msg2 = "Carga video";
